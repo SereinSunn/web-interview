@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>绝对定位和相对定位的区别</title>
+    <style>
+        .p_relative{
+            position: relative;
+            top:30px;
+            left:30px;
+        }
+        .p_absolute{
+            position: absolute;
+            top:30px;
+            left:30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 1   在没有给div设置position属性前，默认为static,每个元素都处在常规文档流中 -->
+    <!-- 一下各元素都是块级元素，所以在页面中从上到下的堆叠在一起 -->
+    <!-- <p>First Paragraph</p> 
+    <p>Second Paragraph</p> 
+    <p >Third Paragraph (with special)</p> 
+    <p>Fourth Paragraph</p>
+    <hr> -->
+    <!--2  相对定位 -->
+    <!-- 相对定位下，这个元素只是相对于该元素自己的原始位置挪动了了位置，页面 不会发生其他的变化。这个元素原来占据的空间没动，其他元素也没动-->
+    <p>First Paragraph-1</p> 
+    <p>Second Paragraph-1</p> 
+    <p  class="p_relative">Third Paragraph-1 (相对定位)</p> 
+    <p>Fourth Paragraph-1</p>
+    <hr>
+      <!--2  绝对定位 -->
+    <!-- 绝对定位下，元素之前占据的空间会被"回收"，绝对定位的元素完全脱离常规文档流，他会相对于顶级元素body定位-->
+    <p>First Paragraph-2</p> 
+    <p>Second Paragraph-2</p> 
+    <p  class="p_absolute">Third Paragraph-2 (绝对定位)</p> 
+    <p>Fourth Paragraph-2</p>
+</body>
+</html>

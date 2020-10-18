@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js实现0-59循环的计时器</title>
+    <style>
+        input{
+			border: 2px solid black;
+			text-align: right;
+			font-size: 20px;
+			font-weight: bold;
+		}
+    </style>
+</head>
+<body>
+   
+	seconds:<input type="text" value="0">
+    <script>
+        // 定义参数，获取输入框中的value值
+      
+        var secondsValue = document.getElementsByTagName('input')[0];
+        // 赋值为0
+        secondsValue.value =0;
+        // 定义计时器，时间段：1秒
+        var timer = setInterval(function () {
+            // value值自增
+            secondsValue.value ++;
+            // 判定条件，value值大于0
+        if(secondsValue.value > 59){ 
+            // 清除计时器
+             clearInterval(timer);
+            //  value值置0
+            secondsValue.value = 0;
+            // 页面自动刷新，解决数字不动，手动刷新问题
+            location.reload([true]) 
+        }
+	
+        },1000)
+
+
+    </script>
+</body>
+</html>
